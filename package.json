@@ -1,13 +1,13 @@
 {
   "name": "@radoslav-marinov-allane/cdk-workshop-constructs",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "files": [
     "lib"
   ],
   "repository": {
-    "url": "https://github.com/radoslav-marinov-allane/cdk-workshop-constructs"
+    "url": "git+https://github.com/radoslav-marinov-allane/cdk-workshop-constructs.git"
   },
   "scripts": {
     "prepublish": "tsc"
