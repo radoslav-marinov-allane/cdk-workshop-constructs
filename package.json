@@ -1,5 +1,5 @@
 {
-  "name": "@dschro-1993/cdk-workshop-constructs",
+  "name": "@radoslav-marinov-allane/cdk-workshop-constructs",
   "version": "0.1.0",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -7,7 +7,7 @@
     "lib"
   ],
   "repository": {
-    "url": "https://github.com/dschro-1993/cdk-workshop-constructs"
+    "url": "https://github.com/radoslav-marinov-allane/cdk-workshop-constructs"
   },
   "scripts": {
     "prepublish": "tsc"
