@@ -17,7 +17,6 @@ import * as cdk from "aws-cdk-lib";
 export interface ServerlessAppProps extends cdk.StackProps {
   localPathToApiCode: string;
   localPathToAppCode: string;
-
   // ...
 }
 
@@ -30,20 +29,10 @@ export class ServerlessApp extends cdk.Stack {
     // let foo = props.localPathToApiCode;
     // let baz = props.localPathToAppCode;
 
-
     // ### Dynamo-DB
-
-    // ...
-
-    // ### λ && API-Gateway
-
-    // ...
-
+    // ### λs && API-Gateway
     // ### S3 && CDN
 
-    // S3-Bucket
-    // S3-Bucket Deployment
-    // OAI
-    // CDN
+    // ...
   }
 }
