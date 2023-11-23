@@ -5,6 +5,7 @@ When your Implementation is ready, publish your Construct by following these Ste
 - Modify `REMOTE-URL`:
 ```
 git remote set-url origin https://github.com/{your-user}/{your-repo}.git
+git push origin main
 ```
 - Or simply copy code into an empty Repository in your Space
 
