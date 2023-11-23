@@ -1,5 +1,5 @@
 {
-  "name": "@dschro-1993/cdk-workshop-level3-constructs",
+  "name": "@dschro-1993/cdk-workshop-constructs",
   "version": "0.1.0",
   "main":  "lib/index.js",
   "types": "lib/index.d.ts",
@@ -7,7 +7,7 @@
     "lib"
   ],
   "repository": {
-    "url": "https://github.com/dschro-1993/cdk-workshop-level3-constructs"
+    "url": "https://github.com/dschro-1993/cdk-workshop-constructs"
   },
   "scripts": {
     "prepublish": "tsc"
