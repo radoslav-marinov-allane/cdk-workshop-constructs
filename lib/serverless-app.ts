@@ -14,6 +14,7 @@ import * as dynamodb from "aws-cdk-lib/aws-dynamodb";
 import * as iam from "aws-cdk-lib/aws-iam";
 import * as wafv2 from "aws-cdk-lib/aws-wafv2";
 import * as fs from "fs";
+import { Provider } from "aws-cdk-lib/custom-resources";
 
 
 /**
@@ -26,6 +27,7 @@ export interface ServerlessAppProps extends cdk.StackProps {
   functionName: string
   openApiPath: string
   webAppPath: string
+  execDeploymentTests?: boolean
 }
 
 export class ServerlessApp extends cdk.Stack {
@@ -187,5 +189,36 @@ export class ServerlessApp extends cdk.Stack {
         }),
       },
     });
+
+    if (props.execDeploymentTests) {
+      // Task1: Use a more complex λ running HTTP-Tests on Api-Gateway Resources!
+
+      // Case1: Return success if Response from Api is valid
+      // Case2: Return failure (throw Exception) if Response from Api is invalid!
+      const test = new lambda.Function(this, "DeploymentTests", {
+        runtime: lambda.Runtime.NODEJS_18_X,
+        handler: "index.handler",
+        code: lambda.Code.fromInline(`
+          exports.handler = async (event) => {
+            const url = event.ResourceProperties.url
+            console.log("Event: ", event);
+          };
+        `),
+      });
+
+      const provider = new Provider(this, "Provider", {
+        onEventHandler: test,
+      });
+  
+      const custom = new cdk.CustomResource(
+        this,
+        "CustomResource",
+        {serviceToken: provider.serviceToken, properties: {now: Date.now(), url: "https://uu3yfodjn7.execute-api.eu-central-1.amazonaws.com"}}
+      );
+  
+      custom.node
+        .addDependency(api);
+    }
+      
   }
 }
