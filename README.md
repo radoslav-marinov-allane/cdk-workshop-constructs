@@ -1,6 +1,6 @@
 # CDK Level3-Constructs
 
-When your Implementation is ready, publish your Construct by following these Steps:
+When your Implementation is ready, publish your Constructs by following these Steps:
 
 - Modify `REMOTE-URL`:
 ```
