@@ -190,7 +190,7 @@ export class ServerlessApp extends cdk.Stack {
       },
     });
 
-    if (props.execDeploymentTests) {
+    // if (props.execDeploymentTests) {
       // Task1: Use a more complex λ running HTTP-Tests on Api-Gateway Resources!
 
       // Case1: Return success if Response from Api is valid
@@ -218,7 +218,7 @@ export class ServerlessApp extends cdk.Stack {
   
       custom.node
         .addDependency(api);
-    }
+    // }
       
   }
 }
