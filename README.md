@@ -20,3 +20,4 @@ export NODE_AUTH_TOKEN={YOUR_GITHUB_ACCESS_TOKEN}
 ```
 npm publish
 ```
+,
